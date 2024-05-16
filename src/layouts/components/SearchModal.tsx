@@ -1,6 +1,6 @@
 "use client";
 
-import searchData from ".json/search.json" assert { type: "json" };
+// import searchData from ".json/search.json" assert { type: "json" };
 import React, { useEffect, useState } from "react";
 import SearchResult, { type ISearchItem } from "./SearchResult";
 
@@ -43,7 +43,7 @@ const SearchModal = () => {
 
   // get search result
   const startTime = performance.now();
-  const searchResult = doSearch(searchData);
+  // const searchResult = doSearch(searchData);
   const endTime = performance.now();
   const totalTime = ((endTime - startTime) / 1000).toFixed(3);
 
@@ -174,7 +174,7 @@ const SearchModal = () => {
             autoComplete="off"
           />
         </div>
-        <SearchResult searchResult={searchResult} searchString={searchString} />
+        {/* <SearchResult searchResult={searchResult} searchString={searchString} /> */}
         <div className="search-wrapper-footer">
           <span className="flex items-center">
             <kbd>
@@ -217,7 +217,7 @@ const SearchModal = () => {
           </span>
           {searchString && (
             <span>
-              <strong>{searchResult.length} </strong> results - in{" "}
+              {/* <strong>{searchResult.length} </strong> results - in{" "} */}
               <strong>{totalTime} </strong> seconds
             </span>
           )}
